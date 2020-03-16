@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.3.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity DeviceID="0x0001" VendorID="0x02B1">
+      <InfoText TextId="DeviceDescription_InfoText"/>
+      <VendorName Value="NACHI-FUJIKOSHI CORP"/>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="I/O" ProductFamily="PNS"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem AddressAssignment="DCP;LOCAL" DNS_CompatibleName="axfieldbus" FixedInSlots="0" ID="DIM 3" ImplementationType="comXpns" MinDeviceInterval="32" ModuleIdentNumber="0x00000001" MultipleWriteSupported="true" NameOfStationNotTransferable="true" ObjectUUID_LocalIndex="1" PhysicalSlots="0..255" DeviceAccessSupported="true" PNIO_Version="V2.2">
+          <ModuleInfo>
+            <Name TextId="COMX 100XX-RE/PNS V1.x.x"/>
+            <InfoText TextId="DIM 3_InfoText"/>
+            <VendorName Value="NACHI-FUJIKOSHI CORP"/>
+            <OrderNumber Value="FD11-OP162"/>
+            <HardwareRelease Value="1"/>
+            <SoftwareRelease Value="1.0.0"/>
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="X1"/>
+            <SubslotItem SubslotNumber="32769" TextId="X1P1"/>
+            <SubslotItem SubslotNumber="32770" TextId="X1P2"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1024" MaxOutputLength="1024"/>
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="0byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="1byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="2byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="3byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="4byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="8byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="12byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="16byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="32byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="64byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="128byteinput"/>
+            <ModuleItemRef AllowedInSlots="1" ModuleItemTarget="256byteinput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="0byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="1byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="2byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="3byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="4byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="8byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="12byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="16byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="32byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="64byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="128byteoutput"/>
+            <ModuleItemRef AllowedInSlots="2" ModuleItemTarget="256byteoutput"/>
+            <ModuleItemRef AllowedInSlots="3" ModuleItemTarget="Safety8ByteIn8ByteOut" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 3" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3 4">
+              <IOData IOCS_Length="1" IOPS_Length="1"/>
+              <ModuleInfo CategoryRef="DAP Module">
+                <Name TextId="COMX 100XX-RE/PNS V1.x.x"/>
+                <InfoText TextId="DIM 3_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_I" DCP_HelloSupported="false" NetworkComponentDiagnosisSupported="true" SubmoduleIdentNumber="0x00000001" SubslotNumber="32768" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1" TextId="PN-IO">
+              <ApplicationRelations>
+                <TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="32 64 128"/>
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_P1" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" SubmoduleIdentNumber="0x00000002" SubslotNumber="32769" TextId="Port1"/>
+            <PortSubmoduleItem ID="IDS_P2" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" SubmoduleIdentNumber="0x00000002" SubslotNumber="32770" TextId="Port2"/>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceSymbol"/>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceIcon"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="0byteinput" ModuleIdentNumber="0x00010000">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_0byteinput_Name"/>
+            <InfoText TextId="Module_0byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="0byteinput" SubmoduleIdentNumber="0x00010000">
+              <IOData>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_0byteinput_Name"/>
+                <InfoText TextId="Submodule_0byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1byteinput" ModuleIdentNumber="0x00010001">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1byteinput_Name"/>
+            <InfoText TextId="Module_1byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1byteinput" SubmoduleIdentNumber="0x00010001">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="1" TextId="DataItem_1byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1byteinput_Name"/>
+                <InfoText TextId="Submodule_1byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="2byteinput" ModuleIdentNumber="0x00010002">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_2byteinput_Name"/>
+            <InfoText TextId="Module_2byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2byteinput" SubmoduleIdentNumber="0x00010002">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="2" TextId="DataItem_2byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_2byteinput_Name"/>
+                <InfoText TextId="Submodule_2byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="3byteinput" ModuleIdentNumber="0x00010003">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_3byteinput_Name"/>
+            <InfoText TextId="Module_3byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3byteinput" SubmoduleIdentNumber="0x00010003">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="3" TextId="DataItem_3byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_3byteinput_Name"/>
+                <InfoText TextId="Submodule_3byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="4byteinput" ModuleIdentNumber="0x00010004">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_4byteinput_Name"/>
+            <InfoText TextId="Module_4byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4byteinput" SubmoduleIdentNumber="0x00010004">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="4" TextId="DataItem_4byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_4byteinput_Name"/>
+                <InfoText TextId="Submodule_4byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="8byteinput" ModuleIdentNumber="0x00010008">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_8byteinput_Name"/>
+            <InfoText TextId="Module_8byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8byteinput" SubmoduleIdentNumber="0x00010008">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="8" TextId="DataItem_8byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_8byteinput_Name"/>
+                <InfoText TextId="Submodule_8byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="12byteinput" ModuleIdentNumber="0x0001000C">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_12byteinput_Name"/>
+            <InfoText TextId="Module_12byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12byteinput" SubmoduleIdentNumber="0x0001000C">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="12" TextId="DataItem_12byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_12byteinput_Name"/>
+                <InfoText TextId="Submodule_12byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="16byteinput" ModuleIdentNumber="0x00010010">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_16byteinput_Name"/>
+            <InfoText TextId="Module_16byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16byteinput" SubmoduleIdentNumber="0x00010010">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="16" TextId="DataItem_16byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_16byteinput_Name"/>
+                <InfoText TextId="Submodule_16byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="32byteinput" ModuleIdentNumber="0x00010020">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_32byteinput_Name"/>
+            <InfoText TextId="Module_32byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="32byteinput" SubmoduleIdentNumber="0x00010020">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="32" TextId="DataItem_32byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_32byteinput_Name"/>
+                <InfoText TextId="Submodule_32byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="64byteinput" ModuleIdentNumber="0x00010040">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_64byteinput_Name"/>
+            <InfoText TextId="Module_64byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="64byteinput" SubmoduleIdentNumber="0x00010040">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="64" TextId="DataItem_64byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_64byteinput_Name"/>
+                <InfoText TextId="Submodule_64byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="128byteinput" ModuleIdentNumber="0x00010080">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_128byteinput_Name"/>
+            <InfoText TextId="Module_128byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="128byteinput" SubmoduleIdentNumber="0x00010080">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="128" TextId="DataItem_128byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_128byteinput_Name"/>
+                <InfoText TextId="Submodule_128byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="256byteinput" ModuleIdentNumber="0x00010100">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_256byteinput_Name"/>
+            <InfoText TextId="Module_256byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="256byteinput" SubmoduleIdentNumber="0x00010100">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="256" TextId="DataItem_256byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_256byteinput_Name"/>
+                <InfoText TextId="Submodule_256byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="0byteoutput" ModuleIdentNumber="0x00020000">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_0byteoutput_Name"/>
+            <InfoText TextId="Module_0byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="0byteoutput" SubmoduleIdentNumber="0x00020000">
+              <IOData>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_0byteoutput_Name"/>
+                <InfoText TextId="Submodule_0byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1byteoutput" ModuleIdentNumber="0x00020001">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1byteoutput_Name"/>
+            <InfoText TextId="Module_1byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1byteoutput" SubmoduleIdentNumber="0x00020001">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="1" TextId="DataItem_1byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1byteoutput_Name"/>
+                <InfoText TextId="Submodule_1byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="2byteoutput" ModuleIdentNumber="0x00020002">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_2byteoutput_Name"/>
+            <InfoText TextId="Module_2byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2byteoutput" SubmoduleIdentNumber="0x00020002">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="2" TextId="DataItem_2byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_2byteoutput_Name"/>
+                <InfoText TextId="Submodule_2byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="3byteoutput" ModuleIdentNumber="0x00020003">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_3byteoutput_Name"/>
+            <InfoText TextId="Module_3byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3byteoutput" SubmoduleIdentNumber="0x00020003">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="3" TextId="DataItem_3byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_3byteoutput_Name"/>
+                <InfoText TextId="Submodule_3byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="4byteoutput" ModuleIdentNumber="0x00020004">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_4byteoutput_Name"/>
+            <InfoText TextId="Module_4byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4byteoutput" SubmoduleIdentNumber="0x00020004">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="4" TextId="DataItem_4byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_4byteoutput_Name"/>
+                <InfoText TextId="Submodule_4byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="8byteoutput" ModuleIdentNumber="0x00020008">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_8byteoutput_Name"/>
+            <InfoText TextId="Module_8byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8byteoutput" SubmoduleIdentNumber="0x00020008">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="8" TextId="DataItem_8byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_8byteoutput_Name"/>
+                <InfoText TextId="Submodule_8byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="12byteoutput" ModuleIdentNumber="0x0002000C">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_12byteoutput_Name"/>
+            <InfoText TextId="Module_12byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12byteoutput" SubmoduleIdentNumber="0x0002000C">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="12" TextId="DataItem_12byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_12byteoutput_Name"/>
+                <InfoText TextId="Submodule_12byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="16byteoutput" ModuleIdentNumber="0x00020010">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_16byteoutput_Name"/>
+            <InfoText TextId="Module_16byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16byteoutput" SubmoduleIdentNumber="0x00020010">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="16" TextId="DataItem_16byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_16byteoutput_Name"/>
+                <InfoText TextId="Submodule_16byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="32byteoutput" ModuleIdentNumber="0x00020020">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_32byteoutput_Name"/>
+            <InfoText TextId="Module_32byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="32byteoutput" SubmoduleIdentNumber="0x00020020">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="32" TextId="DataItem_32byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_32byteoutput_Name"/>
+                <InfoText TextId="Submodule_32byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="64byteoutput" ModuleIdentNumber="0x00020040">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_64byteoutput_Name"/>
+            <InfoText TextId="Module_64byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="64byteoutput" SubmoduleIdentNumber="0x00020040">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="64" TextId="DataItem_64byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_64byteoutput_Name"/>
+                <InfoText TextId="Submodule_64byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="128byteoutput" ModuleIdentNumber="0x00020080">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_128byteoutput_Name"/>
+            <InfoText TextId="Module_128byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="128byteoutput" SubmoduleIdentNumber="0x00020080">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="128" TextId="DataItem_128byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_128byteoutput_Name"/>
+                <InfoText TextId="Submodule_128byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="256byteoutput" ModuleIdentNumber="0x00020100">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_256byteoutput_Name"/>
+            <InfoText TextId="Module_256byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="256byteoutput" SubmoduleIdentNumber="0x00020100">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="256" TextId="DataItem_256byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_256byteoutput_Name"/>
+                <InfoText TextId="Submodule_256byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="Safety8ByteIn8ByteOut" ModuleIdentNumber="0x00080808" xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile">
+          <ModuleInfo CategoryRef="Safety Inout Module">
+            <Name TextId="Module_Safety_8ByteIn8ByteOut_Name" />
+            <InfoText TextId="Module_Safety_8ByteIn8ByteOut_InfoText" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="Safety8ByteIn8ByteOut" SubmoduleIdentNumber="0x00000001" PROFIsafeSupported="true">
+              <IOData F_IO_StructureDescVersion="2" F_IO_StructureDescCRC="3703768312">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Inputs01" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Inputs02" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Inputs03" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Inputs04" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Inputs05" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Inputs06" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Inputs07" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Inputs08" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="Safety" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Outputs01" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Outputs02" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Outputs03" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Outputs04" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Outputs05" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Outputs06" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Outputs07" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="Outputs08" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="Safety" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <F_ParameterRecordDataItem Index="100" F_ParamDescCRC="31601">
+                  <F_Check_iPar DefaultValue="NoCheck" Visible="false" Changeable="false" />
+                  <F_SIL DefaultValue="SIL3" AllowedValues="SIL3" Visible="true" Changeable="false" />
+                  <F_CRC_Length DefaultValue="3-Byte-CRC" Visible="true" />
+                  <F_Block_ID DefaultValue="0" AllowedValues="0" Visible="true" Changeable="false" />
+                  <F_Par_Version />
+                  <F_Source_Add />
+                  <F_Dest_Add AllowedValues="1..65534" />
+                  <F_WD_Time DefaultValue="200" AllowedValues="1..65535" />
+                  <F_Par_CRC DefaultValue="50167" />
+                </F_ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="Submodule_Safety_8ByteIn8ByteOut_Name" />
+                <InfoText TextId="Submodule_Safety_8ByteIn8ByteOut_InfoText" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <GraphicsList>
+        <GraphicItem GraphicFile="GSDML-02B1-0001-COMX100REPNS" ID="1"/>
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem ID="DAP Module" TextId="DAP Module_CategoryName"/>
+        <CategoryItem ID="Input Module" TextId="Input Module_CategoryName"/>
+        <CategoryItem ID="Output Module" TextId="Output Module_CategoryName"/>
+        <CategoryItem ID="Safety Inout Module" TextId="Safety Inout Module_CategoryName" />
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text TextId="COMX 100XX-RE/PNS V1.x.x" Value="COMX 100XX-RE/PNS V1.x.x"/>
+          <Text TextId="DAP Module_CategoryName" Value="Device Access Point Modules"/>
+          <Text TextId="DIM 3_InfoText" Value="Firmware version V1.0.0"/>
+          <Text TextId="DataItem_12byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_12byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_128byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_128byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_16byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_16byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_20byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_20byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_2byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_2byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_256byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_256byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_32byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_32byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_3byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_3byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_4byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_4byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_64byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_64byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_8byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_8byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DeviceDescription_InfoText" Value="PROFINET IO-Device communication module."/>
+          <Text TextId="Input Module_CategoryName" Value="Input Modules"/>
+          <Text TextId="Module_12byteinput_InfoText" Value="12 Bytes Input Module"/>
+          <Text TextId="Module_12byteinput_Name" Value="12 Bytes Input"/>
+          <Text TextId="Module_12byteoutput_InfoText" Value="12 Bytes Output Module"/>
+          <Text TextId="Module_12byteoutput_Name" Value="12 Bytes Output"/>
+          <Text TextId="Module_16byteinput_InfoText" Value="16 Bytes Input Module"/>
+          <Text TextId="Module_16byteinput_Name" Value="16 Bytes Input"/>
+          <Text TextId="Module_16byteoutput_InfoText" Value="16 Bytes Output Module"/>
+          <Text TextId="Module_16byteoutput_Name" Value="16 Bytes Output"/>
+          <Text TextId="Module_0byteinput_InfoText" Value="0 Byte Input Module"/>
+          <Text TextId="Module_0byteinput_Name" Value="0 Byte Input"/>
+          <Text TextId="Module_0byteoutput_InfoText" Value="0 Byte Output Module"/>
+          <Text TextId="Module_0byteoutput_Name" Value="0 Byte Output"/>
+          <Text TextId="Module_1byteinput_InfoText" Value="1 Byte Input Module"/>
+          <Text TextId="Module_1byteinput_Name" Value="1 Byte Input"/>
+          <Text TextId="Module_1byteoutput_InfoText" Value="1 Byte Output Module"/>
+          <Text TextId="Module_1byteoutput_Name" Value="1 Byte Output"/>
+          <Text TextId="Module_20byteinput_InfoText" Value="20 Bytes Input Module"/>
+          <Text TextId="Module_20byteinput_Name" Value="20 Bytes Input"/>
+          <Text TextId="Module_20byteoutput_InfoText" Value="20 Bytes Output Module"/>
+          <Text TextId="Module_20byteoutput_Name" Value="20 Bytes Output"/>
+          <Text TextId="Module_2byteinput_InfoText" Value="2 Bytes Input Module"/>
+          <Text TextId="Module_2byteinput_Name" Value="2 Bytes Input"/>
+          <Text TextId="Module_2byteoutput_InfoText" Value="2 Bytes Output Module"/>
+          <Text TextId="Module_2byteoutput_Name" Value="2 Byte Output"/>
+          <Text TextId="Module_32byteinput_InfoText" Value="32 Bytes Input Module"/>
+          <Text TextId="Module_32byteinput_Name" Value="32 Bytes Input"/>
+          <Text TextId="Module_32byteoutput_InfoText" Value="32 Bytes Output Module"/>
+          <Text TextId="Module_32byteoutput_Name" Value="32 Bytes Output"/>
+          <Text TextId="Module_3byteinput_InfoText" Value="3 Bytes Input Module"/>
+          <Text TextId="Module_3byteinput_Name" Value="3 Bytes Input"/>
+          <Text TextId="Module_3byteoutput_InfoText" Value="3 Bytes Output Module"/>
+          <Text TextId="Module_3byteoutput_Name" Value="3 Bytes Output"/>
+          <Text TextId="Module_4byteinput_InfoText" Value="4 Bytes Input Module"/>
+          <Text TextId="Module_4byteinput_Name" Value="4 Bytes Input"/>
+          <Text TextId="Module_4byteoutput_InfoText" Value="4 Bytes Output Module"/>
+          <Text TextId="Module_4byteoutput_Name" Value="4 Bytes Output"/>
+          <Text TextId="Module_64byteinput_InfoText" Value="64 Bytes Input Module"/>
+          <Text TextId="Module_64byteinput_Name" Value="64 Bytes Input"/>
+          <Text TextId="Module_64byteoutput_InfoText" Value="64 Bytes Output Module"/>
+          <Text TextId="Module_64byteoutput_Name" Value="64 Bytes Output"/>
+          <Text TextId="Module_128byteinput_InfoText" Value="128 Bytes Input Module"/>
+          <Text TextId="Module_128byteinput_Name" Value="128 Bytes Input"/>
+          <Text TextId="Module_128byteoutput_InfoText" Value="128 Bytes Output Module"/>
+          <Text TextId="Module_128byteoutput_Name" Value="128 Bytes Output"/>
+          <Text TextId="Module_256byteinput_InfoText" Value="256 Bytes Input Module"/>
+          <Text TextId="Module_256byteinput_Name" Value="256 Bytes Input"/>
+          <Text TextId="Module_256byteoutput_InfoText" Value="256 Bytes Output Module"/>
+          <Text TextId="Module_256byteoutput_Name" Value="256 Bytes Output"/>
+          <Text TextId="Module_8byteinput_InfoText" Value="8 Bytes Input Module"/>
+          <Text TextId="Module_8byteinput_Name" Value="8 Bytes Input"/>
+          <Text TextId="Module_8byteoutput_InfoText" Value="8 Bytes Output Module"/>
+          <Text TextId="Module_8byteoutput_Name" Value="8 Bytes Output"/>
+          <Text TextId="Output Module_CategoryName" Value="Output Modules"/>
+          <Text TextId="PN-IO" Value="PN-IO"/>
+          <Text TextId="Port1" Value="Port 1"/>
+          <Text TextId="Port2" Value="Port 2"/>
+          <Text TextId="Submodule_12byteinput_InfoText" Value="12 Bytes Input Submodule"/>
+          <Text TextId="Submodule_12byteinput_Name" Value="12 Bytes Input"/>
+          <Text TextId="Submodule_12byteoutput_InfoText" Value="12 Bytes Output Submodule"/>
+          <Text TextId="Submodule_12byteoutput_Name" Value="12 Bytes Output"/>
+          <Text TextId="Submodule_16byteinput_InfoText" Value="16 Bytes Input Submodule"/>
+          <Text TextId="Submodule_16byteinput_Name" Value="16 Bytes Input"/>
+          <Text TextId="Submodule_16byteoutput_InfoText" Value="16 Bytes Output Submodule"/>
+          <Text TextId="Submodule_16byteoutput_Name" Value="16 Bytes Output"/>
+          <Text TextId="Submodule_0byteinput_InfoText" Value="0 Byte Input Submodule"/>
+          <Text TextId="Submodule_0byteinput_Name" Value="0 Byte Input"/>
+          <Text TextId="Submodule_0byteoutput_InfoText" Value="0 Byte Output Submodule"/>
+          <Text TextId="Submodule_0byteoutput_Name" Value="0 Byte Output"/>
+          <Text TextId="Submodule_1byteinput_InfoText" Value="1 Byte Input Submodule"/>
+          <Text TextId="Submodule_1byteinput_Name" Value="1 Byte Input"/>
+          <Text TextId="Submodule_1byteoutput_InfoText" Value="1 Byte Output Submodule"/>
+          <Text TextId="Submodule_1byteoutput_Name" Value="1 Byte Output"/>
+          <Text TextId="Submodule_20byteinput_InfoText" Value="20 Bytes Input Submodule"/>
+          <Text TextId="Submodule_20byteinput_Name" Value="20 Bytes Input"/>
+          <Text TextId="Submodule_20byteoutput_InfoText" Value="20 Bytes Output Submodule"/>
+          <Text TextId="Submodule_20byteoutput_Name" Value="20 Bytes Output"/>
+          <Text TextId="Submodule_2byteinput_InfoText" Value="2 Bytes Input Submodule"/>
+          <Text TextId="Submodule_2byteinput_Name" Value="2 Bytes Input"/>
+          <Text TextId="Submodule_2byteoutput_InfoText" Value="2 Byte Output Submodule"/>
+          <Text TextId="Submodule_2byteoutput_Name" Value="2 Byte Output"/>
+          <Text TextId="Submodule_32byteinput_InfoText" Value="32 Bytes Input Submodule"/>
+          <Text TextId="Submodule_32byteinput_Name" Value="32 Bytes Input"/>
+          <Text TextId="Submodule_32byteoutput_InfoText" Value="32 Bytes Output Submodule"/>
+          <Text TextId="Submodule_32byteoutput_Name" Value="32 Bytes Output"/>
+          <Text TextId="Submodule_3byteinput_InfoText" Value="3 Bytes Input Submodule"/>
+          <Text TextId="Submodule_3byteinput_Name" Value="3 Bytes Input"/>
+          <Text TextId="Submodule_3byteoutput_InfoText" Value="3 Byte Output Submodule"/>
+          <Text TextId="Submodule_3byteoutput_Name" Value="3 Byte Output"/>
+          <Text TextId="Submodule_4byteinput_InfoText" Value="4 Bytes Input Submodule"/>
+          <Text TextId="Submodule_4byteinput_Name" Value="4 Bytes Input"/>
+          <Text TextId="Submodule_4byteoutput_InfoText" Value="4 Byte Output Submodule"/>
+          <Text TextId="Submodule_4byteoutput_Name" Value="4 Bytes Output"/>
+          <Text TextId="Submodule_64byteinput_InfoText" Value="64 Bytes Input Submodule"/>
+          <Text TextId="Submodule_64byteinput_Name" Value="64 Bytes Input"/>
+          <Text TextId="Submodule_64byteoutput_InfoText" Value="64 Bytes Output Submodule"/>
+          <Text TextId="Submodule_64byteoutput_Name" Value="64 Bytes Output"/>
+          <Text TextId="Submodule_8byteinput_InfoText" Value="8 Bytes Input Submodule"/>
+          <Text TextId="Submodule_8byteinput_Name" Value="8 Bytes Input"/>
+          <Text TextId="Submodule_8byteoutput_InfoText" Value="8 Byte Output Submodule"/>
+          <Text TextId="Submodule_8byteoutput_Name" Value="8 Bytes Output"/>
+          <Text TextId="Submodule_128byteinput_InfoText" Value="128 Bytes Input Submodule"/>
+          <Text TextId="Submodule_128byteinput_Name" Value="128 Bytes Input"/>
+          <Text TextId="Submodule_128byteoutput_InfoText" Value="128 Bytes Output Submodule"/>
+          <Text TextId="Submodule_128byteoutput_Name" Value="128 Bytes Output"/>
+          <Text TextId="Submodule_256byteinput_InfoText" Value="256 Bytes Input Submodule"/>
+          <Text TextId="Submodule_256byteinput_Name" Value="256 Bytes Input"/>
+          <Text TextId="Submodule_256byteoutput_InfoText" Value="256 Bytes Output Submodule"/>
+          <Text TextId="Submodule_256byteoutput_Name" Value="256 Bytes Output"/>
+          <Text TextId="X1" Value="X1"/>
+          <Text TextId="X1P1" Value="X1 P1"/>
+          <Text TextId="X1P2" Value="X1 P2"/>
+          <Text TextId="Module_Safety_0ByteIn0ByteOut_Name" Value="Safety Inout 0Bytes/0Bytes"/>
+          <Text TextId="Module_Safety_0ByteIn0ByteOut_InfoText" Value="Safety Inout 0Bytes/0Bytes Module"/>
+          <Text TextId="Module_Safety_1ByteIn0ByteOut_Name" Value="Safety Inout 1Bytes/0Bytes"/>
+          <Text TextId="Module_Safety_1ByteIn0ByteOut_InfoText" Value="Safety Inout 1Bytes/0Bytes Module"/>
+          <Text TextId="Module_Safety_2ByteIn0ByteOut_Name" Value="Safety Inout 2Bytes/0Bytes"/>
+          <Text TextId="Module_Safety_2ByteIn0ByteOut_InfoText" Value="Safety Inout 2Bytes/0Bytes Module"/>
+          <Text TextId="Module_Safety_3ByteIn0ByteOut_Name" Value="Safety Inout 3Bytes/0Bytes"/>
+          <Text TextId="Module_Safety_3ByteIn0ByteOut_InfoText" Value="Safety Inout 3Bytes/0Bytes Module"/>
+          <Text TextId="Module_Safety_4ByteIn0ByteOut_Name" Value="Safety Inout 4Bytes/0Bytes"/>
+          <Text TextId="Module_Safety_4ByteIn0ByteOut_InfoText" Value="Safety Inout 4Bytes/0Bytes Module"/>
+          <Text TextId="Module_Safety_5ByteIn0ByteOut_Name" Value="Safety Inout 5Bytes/0Bytes"/>
+          <Text TextId="Module_Safety_5ByteIn0ByteOut_InfoText" Value="Safety Inout 5Bytes/0Bytes Module"/>
+          <Text TextId="Module_Safety_6ByteIn0ByteOut_Name" Value="Safety Inout 6Bytes/0Bytes"/>
+          <Text TextId="Module_Safety_6ByteIn0ByteOut_InfoText" Value="Safety Inout 6Bytes/0Bytes Module"/>
+          <Text TextId="Module_Safety_7ByteIn0ByteOut_Name" Value="Safety Inout 7Bytes/0Bytes"/>
+          <Text TextId="Module_Safety_7ByteIn0ByteOut_InfoText" Value="Safety Inout 7Bytes/0Bytes Module"/>
+          <Text TextId="Module_Safety_8ByteIn0ByteOut_Name" Value="Safety Inout 8Bytes/0Bytes"/>
+          <Text TextId="Module_Safety_8ByteIn0ByteOut_InfoText" Value="Safety Inout 8Bytes/0Bytes Module"/>
+          <Text TextId="Module_Safety_0ByteIn1ByteOut_Name" Value="Safety Inout 0Bytes/1Bytes"/>
+          <Text TextId="Module_Safety_0ByteIn1ByteOut_InfoText" Value="Safety Inout 0Bytes/1Bytes Module"/>
+          <Text TextId="Module_Safety_1ByteIn1ByteOut_Name" Value="Safety Inout 1Bytes/1Bytes"/>
+          <Text TextId="Module_Safety_1ByteIn1ByteOut_InfoText" Value="Safety Inout 1Bytes/1Bytes Module"/>
+          <Text TextId="Module_Safety_2ByteIn1ByteOut_Name" Value="Safety Inout 2Bytes/1Bytes"/>
+          <Text TextId="Module_Safety_2ByteIn1ByteOut_InfoText" Value="Safety Inout 2Bytes/1Bytes Module"/>
+          <Text TextId="Module_Safety_3ByteIn1ByteOut_Name" Value="Safety Inout 3Bytes/1Bytes"/>
+          <Text TextId="Module_Safety_3ByteIn1ByteOut_InfoText" Value="Safety Inout 3Bytes/1Bytes Module"/>
+          <Text TextId="Module_Safety_4ByteIn1ByteOut_Name" Value="Safety Inout 4Bytes/1Bytes"/>
+          <Text TextId="Module_Safety_4ByteIn1ByteOut_InfoText" Value="Safety Inout 4Bytes/1Bytes Module"/>
+          <Text TextId="Module_Safety_5ByteIn1ByteOut_Name" Value="Safety Inout 5Bytes/1Bytes"/>
+          <Text TextId="Module_Safety_5ByteIn1ByteOut_InfoText" Value="Safety Inout 5Bytes/1Bytes Module"/>
+          <Text TextId="Module_Safety_6ByteIn1ByteOut_Name" Value="Safety Inout 6Bytes/1Bytes"/>
+          <Text TextId="Module_Safety_6ByteIn1ByteOut_InfoText" Value="Safety Inout 6Bytes/1Bytes Module"/>
+          <Text TextId="Module_Safety_7ByteIn1ByteOut_Name" Value="Safety Inout 7Bytes/1Bytes"/>
+          <Text TextId="Module_Safety_7ByteIn1ByteOut_InfoText" Value="Safety Inout 7Bytes/1Bytes Module"/>
+          <Text TextId="Module_Safety_8ByteIn1ByteOut_Name" Value="Safety Inout 8Bytes/1Bytes"/>
+          <Text TextId="Module_Safety_8ByteIn1ByteOut_InfoText" Value="Safety Inout 8Bytes/1Bytes Module"/>
+          <Text TextId="Module_Safety_0ByteIn2ByteOut_Name" Value="Safety Inout 0Bytes/2Bytes"/>
+          <Text TextId="Module_Safety_0ByteIn2ByteOut_InfoText" Value="Safety Inout 0Bytes/2Bytes Module"/>
+          <Text TextId="Module_Safety_1ByteIn2ByteOut_Name" Value="Safety Inout 1Bytes/2Bytes"/>
+          <Text TextId="Module_Safety_1ByteIn2ByteOut_InfoText" Value="Safety Inout 1Bytes/2Bytes Module"/>
+          <Text TextId="Module_Safety_2ByteIn2ByteOut_Name" Value="Safety Inout 2Bytes/2Bytes"/>
+          <Text TextId="Module_Safety_2ByteIn2ByteOut_InfoText" Value="Safety Inout 2Bytes/2Bytes Module"/>
+          <Text TextId="Module_Safety_3ByteIn2ByteOut_Name" Value="Safety Inout 3Bytes/2Bytes"/>
+          <Text TextId="Module_Safety_3ByteIn2ByteOut_InfoText" Value="Safety Inout 3Bytes/2Bytes Module"/>
+          <Text TextId="Module_Safety_4ByteIn2ByteOut_Name" Value="Safety Inout 4Bytes/2Bytes"/>
+          <Text TextId="Module_Safety_4ByteIn2ByteOut_InfoText" Value="Safety Inout 4Bytes/2Bytes Module"/>
+          <Text TextId="Module_Safety_5ByteIn2ByteOut_Name" Value="Safety Inout 5Bytes/2Bytes"/>
+          <Text TextId="Module_Safety_5ByteIn2ByteOut_InfoText" Value="Safety Inout 5Bytes/2Bytes Module"/>
+          <Text TextId="Module_Safety_6ByteIn2ByteOut_Name" Value="Safety Inout 6Bytes/2Bytes"/>
+          <Text TextId="Module_Safety_6ByteIn2ByteOut_InfoText" Value="Safety Inout 6Bytes/2Bytes Module"/>
+          <Text TextId="Module_Safety_7ByteIn2ByteOut_Name" Value="Safety Inout 7Bytes/2Bytes"/>
+          <Text TextId="Module_Safety_7ByteIn2ByteOut_InfoText" Value="Safety Inout 7Bytes/2Bytes Module"/>
+          <Text TextId="Module_Safety_8ByteIn2ByteOut_Name" Value="Safety Inout 8Bytes/2Bytes"/>
+          <Text TextId="Module_Safety_8ByteIn2ByteOut_InfoText" Value="Safety Inout 8Bytes/2Bytes Module"/>
+          <Text TextId="Module_Safety_0ByteIn3ByteOut_Name" Value="Safety Inout 0Bytes/3Bytes"/>
+          <Text TextId="Module_Safety_0ByteIn3ByteOut_InfoText" Value="Safety Inout 0Bytes/3Bytes Module"/>
+          <Text TextId="Module_Safety_1ByteIn3ByteOut_Name" Value="Safety Inout 1Bytes/3Bytes"/>
+          <Text TextId="Module_Safety_1ByteIn3ByteOut_InfoText" Value="Safety Inout 1Bytes/3Bytes Module"/>
+          <Text TextId="Module_Safety_2ByteIn3ByteOut_Name" Value="Safety Inout 2Bytes/3Bytes"/>
+          <Text TextId="Module_Safety_2ByteIn3ByteOut_InfoText" Value="Safety Inout 2Bytes/3Bytes Module"/>
+          <Text TextId="Module_Safety_3ByteIn3ByteOut_Name" Value="Safety Inout 3Bytes/3Bytes"/>
+          <Text TextId="Module_Safety_3ByteIn3ByteOut_InfoText" Value="Safety Inout 3Bytes/3Bytes Module"/>
+          <Text TextId="Module_Safety_4ByteIn3ByteOut_Name" Value="Safety Inout 4Bytes/3Bytes"/>
+          <Text TextId="Module_Safety_4ByteIn3ByteOut_InfoText" Value="Safety Inout 4Bytes/3Bytes Module"/>
+          <Text TextId="Module_Safety_5ByteIn3ByteOut_Name" Value="Safety Inout 5Bytes/3Bytes"/>
+          <Text TextId="Module_Safety_5ByteIn3ByteOut_InfoText" Value="Safety Inout 5Bytes/3Bytes Module"/>
+          <Text TextId="Module_Safety_6ByteIn3ByteOut_Name" Value="Safety Inout 6Bytes/3Bytes"/>
+          <Text TextId="Module_Safety_6ByteIn3ByteOut_InfoText" Value="Safety Inout 6Bytes/3Bytes Module"/>
+          <Text TextId="Module_Safety_7ByteIn3ByteOut_Name" Value="Safety Inout 7Bytes/3Bytes"/>
+          <Text TextId="Module_Safety_7ByteIn3ByteOut_InfoText" Value="Safety Inout 7Bytes/3Bytes Module"/>
+          <Text TextId="Module_Safety_8ByteIn3ByteOut_Name" Value="Safety Inout 8Bytes/3Bytes"/>
+          <Text TextId="Module_Safety_8ByteIn3ByteOut_InfoText" Value="Safety Inout 8Bytes/3Bytes Module"/>
+          <Text TextId="Module_Safety_0ByteIn4ByteOut_Name" Value="Safety Inout 0Bytes/4Bytes"/>
+          <Text TextId="Module_Safety_0ByteIn4ByteOut_InfoText" Value="Safety Inout 0Bytes/4Bytes Module"/>
+          <Text TextId="Module_Safety_1ByteIn4ByteOut_Name" Value="Safety Inout 1Bytes/4Bytes"/>
+          <Text TextId="Module_Safety_1ByteIn4ByteOut_InfoText" Value="Safety Inout 1Bytes/4Bytes Module"/>
+          <Text TextId="Module_Safety_2ByteIn4ByteOut_Name" Value="Safety Inout 2Bytes/4Bytes"/>
+          <Text TextId="Module_Safety_2ByteIn4ByteOut_InfoText" Value="Safety Inout 2Bytes/4Bytes Module"/>
+          <Text TextId="Module_Safety_3ByteIn4ByteOut_Name" Value="Safety Inout 3Bytes/4Bytes"/>
+          <Text TextId="Module_Safety_3ByteIn4ByteOut_InfoText" Value="Safety Inout 3Bytes/4Bytes Module"/>
+          <Text TextId="Module_Safety_4ByteIn4ByteOut_Name" Value="Safety Inout 4Bytes/4Bytes"/>
+          <Text TextId="Module_Safety_4ByteIn4ByteOut_InfoText" Value="Safety Inout 4Bytes/4Bytes Module"/>
+          <Text TextId="Module_Safety_5ByteIn4ByteOut_Name" Value="Safety Inout 5Bytes/4Bytes"/>
+          <Text TextId="Module_Safety_5ByteIn4ByteOut_InfoText" Value="Safety Inout 5Bytes/4Bytes Module"/>
+          <Text TextId="Module_Safety_6ByteIn4ByteOut_Name" Value="Safety Inout 6Bytes/4Bytes"/>
+          <Text TextId="Module_Safety_6ByteIn4ByteOut_InfoText" Value="Safety Inout 6Bytes/4Bytes Module"/>
+          <Text TextId="Module_Safety_7ByteIn4ByteOut_Name" Value="Safety Inout 7Bytes/4Bytes"/>
+          <Text TextId="Module_Safety_7ByteIn4ByteOut_InfoText" Value="Safety Inout 7Bytes/4Bytes Module"/>
+          <Text TextId="Module_Safety_8ByteIn4ByteOut_Name" Value="Safety Inout 8Bytes/4Bytes"/>
+          <Text TextId="Module_Safety_8ByteIn4ByteOut_InfoText" Value="Safety Inout 8Bytes/4Bytes Module"/>
+          <Text TextId="Module_Safety_0ByteIn5ByteOut_Name" Value="Safety Inout 0Bytes/5Bytes"/>
+          <Text TextId="Module_Safety_0ByteIn5ByteOut_InfoText" Value="Safety Inout 0Bytes/5Bytes Module"/>
+          <Text TextId="Module_Safety_1ByteIn5ByteOut_Name" Value="Safety Inout 1Bytes/5Bytes"/>
+          <Text TextId="Module_Safety_1ByteIn5ByteOut_InfoText" Value="Safety Inout 1Bytes/5Bytes Module"/>
+          <Text TextId="Module_Safety_2ByteIn5ByteOut_Name" Value="Safety Inout 2Bytes/5Bytes"/>
+          <Text TextId="Module_Safety_2ByteIn5ByteOut_InfoText" Value="Safety Inout 2Bytes/5Bytes Module"/>
+          <Text TextId="Module_Safety_3ByteIn5ByteOut_Name" Value="Safety Inout 3Bytes/5Bytes"/>
+          <Text TextId="Module_Safety_3ByteIn5ByteOut_InfoText" Value="Safety Inout 3Bytes/5Bytes Module"/>
+          <Text TextId="Module_Safety_4ByteIn5ByteOut_Name" Value="Safety Inout 4Bytes/5Bytes"/>
+          <Text TextId="Module_Safety_4ByteIn5ByteOut_InfoText" Value="Safety Inout 4Bytes/5Bytes Module"/>
+          <Text TextId="Module_Safety_5ByteIn5ByteOut_Name" Value="Safety Inout 5Bytes/5Bytes"/>
+          <Text TextId="Module_Safety_5ByteIn5ByteOut_InfoText" Value="Safety Inout 5Bytes/5Bytes Module"/>
+          <Text TextId="Module_Safety_6ByteIn5ByteOut_Name" Value="Safety Inout 6Bytes/5Bytes"/>
+          <Text TextId="Module_Safety_6ByteIn5ByteOut_InfoText" Value="Safety Inout 6Bytes/5Bytes Module"/>
+          <Text TextId="Module_Safety_7ByteIn5ByteOut_Name" Value="Safety Inout 7Bytes/5Bytes"/>
+          <Text TextId="Module_Safety_7ByteIn5ByteOut_InfoText" Value="Safety Inout 7Bytes/5Bytes Module"/>
+          <Text TextId="Module_Safety_8ByteIn5ByteOut_Name" Value="Safety Inout 8Bytes/5Bytes"/>
+          <Text TextId="Module_Safety_8ByteIn5ByteOut_InfoText" Value="Safety Inout 8Bytes/5Bytes Module"/>
+          <Text TextId="Module_Safety_0ByteIn6ByteOut_Name" Value="Safety Inout 0Bytes/6Bytes"/>
+          <Text TextId="Module_Safety_0ByteIn6ByteOut_InfoText" Value="Safety Inout 0Bytes/6Bytes Module"/>
+          <Text TextId="Module_Safety_1ByteIn6ByteOut_Name" Value="Safety Inout 1Bytes/6Bytes"/>
+          <Text TextId="Module_Safety_1ByteIn6ByteOut_InfoText" Value="Safety Inout 1Bytes/6Bytes Module"/>
+          <Text TextId="Module_Safety_2ByteIn6ByteOut_Name" Value="Safety Inout 2Bytes/6Bytes"/>
+          <Text TextId="Module_Safety_2ByteIn6ByteOut_InfoText" Value="Safety Inout 2Bytes/6Bytes Module"/>
+          <Text TextId="Module_Safety_3ByteIn6ByteOut_Name" Value="Safety Inout 3Bytes/6Bytes"/>
+          <Text TextId="Module_Safety_3ByteIn6ByteOut_InfoText" Value="Safety Inout 3Bytes/6Bytes Module"/>
+          <Text TextId="Module_Safety_4ByteIn6ByteOut_Name" Value="Safety Inout 4Bytes/6Bytes"/>
+          <Text TextId="Module_Safety_4ByteIn6ByteOut_InfoText" Value="Safety Inout 4Bytes/6Bytes Module"/>
+          <Text TextId="Module_Safety_5ByteIn6ByteOut_Name" Value="Safety Inout 5Bytes/6Bytes"/>
+          <Text TextId="Module_Safety_5ByteIn6ByteOut_InfoText" Value="Safety Inout 5Bytes/6Bytes Module"/>
+          <Text TextId="Module_Safety_6ByteIn6ByteOut_Name" Value="Safety Inout 6Bytes/6Bytes"/>
+          <Text TextId="Module_Safety_6ByteIn6ByteOut_InfoText" Value="Safety Inout 6Bytes/6Bytes Module"/>
+          <Text TextId="Module_Safety_7ByteIn6ByteOut_Name" Value="Safety Inout 7Bytes/6Bytes"/>
+          <Text TextId="Module_Safety_7ByteIn6ByteOut_InfoText" Value="Safety Inout 7Bytes/6Bytes Module"/>
+          <Text TextId="Module_Safety_8ByteIn6ByteOut_Name" Value="Safety Inout 8Bytes/6Bytes"/>
+          <Text TextId="Module_Safety_8ByteIn6ByteOut_InfoText" Value="Safety Inout 8Bytes/6Bytes Module"/>
+          <Text TextId="Module_Safety_0ByteIn7ByteOut_Name" Value="Safety Inout 0Bytes/7Bytes"/>
+          <Text TextId="Module_Safety_0ByteIn7ByteOut_InfoText" Value="Safety Inout 0Bytes/7Bytes Module"/>
+          <Text TextId="Module_Safety_1ByteIn7ByteOut_Name" Value="Safety Inout 1Bytes/7Bytes"/>
+          <Text TextId="Module_Safety_1ByteIn7ByteOut_InfoText" Value="Safety Inout 1Bytes/7Bytes Module"/>
+          <Text TextId="Module_Safety_2ByteIn7ByteOut_Name" Value="Safety Inout 2Bytes/7Bytes"/>
+          <Text TextId="Module_Safety_2ByteIn7ByteOut_InfoText" Value="Safety Inout 2Bytes/7Bytes Module"/>
+          <Text TextId="Module_Safety_3ByteIn7ByteOut_Name" Value="Safety Inout 3Bytes/7Bytes"/>
+          <Text TextId="Module_Safety_3ByteIn7ByteOut_InfoText" Value="Safety Inout 3Bytes/7Bytes Module"/>
+          <Text TextId="Module_Safety_4ByteIn7ByteOut_Name" Value="Safety Inout 4Bytes/7Bytes"/>
+          <Text TextId="Module_Safety_4ByteIn7ByteOut_InfoText" Value="Safety Inout 4Bytes/7Bytes Module"/>
+          <Text TextId="Module_Safety_5ByteIn7ByteOut_Name" Value="Safety Inout 5Bytes/7Bytes"/>
+          <Text TextId="Module_Safety_5ByteIn7ByteOut_InfoText" Value="Safety Inout 5Bytes/7Bytes Module"/>
+          <Text TextId="Module_Safety_6ByteIn7ByteOut_Name" Value="Safety Inout 6Bytes/7Bytes"/>
+          <Text TextId="Module_Safety_6ByteIn7ByteOut_InfoText" Value="Safety Inout 6Bytes/7Bytes Module"/>
+          <Text TextId="Module_Safety_7ByteIn7ByteOut_Name" Value="Safety Inout 7Bytes/7Bytes"/>
+          <Text TextId="Module_Safety_7ByteIn7ByteOut_InfoText" Value="Safety Inout 7Bytes/7Bytes Module"/>
+          <Text TextId="Module_Safety_8ByteIn7ByteOut_Name" Value="Safety Inout 8Bytes/7Bytes"/>
+          <Text TextId="Module_Safety_8ByteIn7ByteOut_InfoText" Value="Safety Inout 8Bytes/7Bytes Module"/>
+          <Text TextId="Module_Safety_0ByteIn8ByteOut_Name" Value="Safety Inout 0Bytes/8Bytes"/>
+          <Text TextId="Module_Safety_0ByteIn8ByteOut_InfoText" Value="Safety Inout 0Bytes/8Bytes Module"/>
+          <Text TextId="Module_Safety_1ByteIn8ByteOut_Name" Value="Safety Inout 1Bytes/8Bytes"/>
+          <Text TextId="Module_Safety_1ByteIn8ByteOut_InfoText" Value="Safety Inout 1Bytes/8Bytes Module"/>
+          <Text TextId="Module_Safety_2ByteIn8ByteOut_Name" Value="Safety Inout 2Bytes/8Bytes"/>
+          <Text TextId="Module_Safety_2ByteIn8ByteOut_InfoText" Value="Safety Inout 2Bytes/8Bytes Module"/>
+          <Text TextId="Module_Safety_3ByteIn8ByteOut_Name" Value="Safety Inout 3Bytes/8Bytes"/>
+          <Text TextId="Module_Safety_3ByteIn8ByteOut_InfoText" Value="Safety Inout 3Bytes/8Bytes Module"/>
+          <Text TextId="Module_Safety_4ByteIn8ByteOut_Name" Value="Safety Inout 4Bytes/8Bytes"/>
+          <Text TextId="Module_Safety_4ByteIn8ByteOut_InfoText" Value="Safety Inout 4Bytes/8Bytes Module"/>
+          <Text TextId="Module_Safety_5ByteIn8ByteOut_Name" Value="Safety Inout 5Bytes/8Bytes"/>
+          <Text TextId="Module_Safety_5ByteIn8ByteOut_InfoText" Value="Safety Inout 5Bytes/8Bytes Module"/>
+          <Text TextId="Module_Safety_6ByteIn8ByteOut_Name" Value="Safety Inout 6Bytes/8Bytes"/>
+          <Text TextId="Module_Safety_6ByteIn8ByteOut_InfoText" Value="Safety Inout 6Bytes/8Bytes Module"/>
+          <Text TextId="Module_Safety_7ByteIn8ByteOut_Name" Value="Safety Inout 7Bytes/8Bytes"/>
+          <Text TextId="Module_Safety_7ByteIn8ByteOut_InfoText" Value="Safety Inout 7Bytes/8Bytes Module"/>
+          <Text TextId="Module_Safety_8ByteIn8ByteOut_Name" Value="Safety Inout 8Bytes/8Bytes"/>
+          <Text TextId="Module_Safety_8ByteIn8ByteOut_InfoText" Value="Safety Inout 8Bytes/8Bytes Module"/>
+          <Text TextId="Submodule_Safety_0ByteIn0ByteOut_Name" Value="Safety Inout 0Bytes/0Bytes"/>
+          <Text TextId="Submodule_Safety_0ByteIn0ByteOut_InfoText" Value="Safety Inout 0Bytes/0Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_1ByteIn0ByteOut_Name" Value="Safety Inout 1Bytes/0Bytes"/>
+          <Text TextId="Submodule_Safety_1ByteIn0ByteOut_InfoText" Value="Safety Inout 1Bytes/0Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_2ByteIn0ByteOut_Name" Value="Safety Inout 2Bytes/0Bytes"/>
+          <Text TextId="Submodule_Safety_2ByteIn0ByteOut_InfoText" Value="Safety Inout 2Bytes/0Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_3ByteIn0ByteOut_Name" Value="Safety Inout 3Bytes/0Bytes"/>
+          <Text TextId="Submodule_Safety_3ByteIn0ByteOut_InfoText" Value="Safety Inout 3Bytes/0Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_4ByteIn0ByteOut_Name" Value="Safety Inout 4Bytes/0Bytes"/>
+          <Text TextId="Submodule_Safety_4ByteIn0ByteOut_InfoText" Value="Safety Inout 4Bytes/0Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_5ByteIn0ByteOut_Name" Value="Safety Inout 5Bytes/0Bytes"/>
+          <Text TextId="Submodule_Safety_5ByteIn0ByteOut_InfoText" Value="Safety Inout 5Bytes/0Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_6ByteIn0ByteOut_Name" Value="Safety Inout 6Bytes/0Bytes"/>
+          <Text TextId="Submodule_Safety_6ByteIn0ByteOut_InfoText" Value="Safety Inout 6Bytes/0Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_7ByteIn0ByteOut_Name" Value="Safety Inout 7Bytes/0Bytes"/>
+          <Text TextId="Submodule_Safety_7ByteIn0ByteOut_InfoText" Value="Safety Inout 7Bytes/0Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_8ByteIn0ByteOut_Name" Value="Safety Inout 8Bytes/0Bytes"/>
+          <Text TextId="Submodule_Safety_8ByteIn0ByteOut_InfoText" Value="Safety Inout 8Bytes/0Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_0ByteIn1ByteOut_Name" Value="Safety Inout 0Bytes/1Bytes"/>
+          <Text TextId="Submodule_Safety_0ByteIn1ByteOut_InfoText" Value="Safety Inout 0Bytes/1Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_1ByteIn1ByteOut_Name" Value="Safety Inout 1Bytes/1Bytes"/>
+          <Text TextId="Submodule_Safety_1ByteIn1ByteOut_InfoText" Value="Safety Inout 1Bytes/1Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_2ByteIn1ByteOut_Name" Value="Safety Inout 2Bytes/1Bytes"/>
+          <Text TextId="Submodule_Safety_2ByteIn1ByteOut_InfoText" Value="Safety Inout 2Bytes/1Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_3ByteIn1ByteOut_Name" Value="Safety Inout 3Bytes/1Bytes"/>
+          <Text TextId="Submodule_Safety_3ByteIn1ByteOut_InfoText" Value="Safety Inout 3Bytes/1Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_4ByteIn1ByteOut_Name" Value="Safety Inout 4Bytes/1Bytes"/>
+          <Text TextId="Submodule_Safety_4ByteIn1ByteOut_InfoText" Value="Safety Inout 4Bytes/1Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_5ByteIn1ByteOut_Name" Value="Safety Inout 5Bytes/1Bytes"/>
+          <Text TextId="Submodule_Safety_5ByteIn1ByteOut_InfoText" Value="Safety Inout 5Bytes/1Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_6ByteIn1ByteOut_Name" Value="Safety Inout 6Bytes/1Bytes"/>
+          <Text TextId="Submodule_Safety_6ByteIn1ByteOut_InfoText" Value="Safety Inout 6Bytes/1Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_7ByteIn1ByteOut_Name" Value="Safety Inout 7Bytes/1Bytes"/>
+          <Text TextId="Submodule_Safety_7ByteIn1ByteOut_InfoText" Value="Safety Inout 7Bytes/1Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_8ByteIn1ByteOut_Name" Value="Safety Inout 8Bytes/1Bytes"/>
+          <Text TextId="Submodule_Safety_8ByteIn1ByteOut_InfoText" Value="Safety Inout 8Bytes/1Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_0ByteIn2ByteOut_Name" Value="Safety Inout 0Bytes/2Bytes"/>
+          <Text TextId="Submodule_Safety_0ByteIn2ByteOut_InfoText" Value="Safety Inout 0Bytes/2Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_1ByteIn2ByteOut_Name" Value="Safety Inout 1Bytes/2Bytes"/>
+          <Text TextId="Submodule_Safety_1ByteIn2ByteOut_InfoText" Value="Safety Inout 1Bytes/2Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_2ByteIn2ByteOut_Name" Value="Safety Inout 2Bytes/2Bytes"/>
+          <Text TextId="Submodule_Safety_2ByteIn2ByteOut_InfoText" Value="Safety Inout 2Bytes/2Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_3ByteIn2ByteOut_Name" Value="Safety Inout 3Bytes/2Bytes"/>
+          <Text TextId="Submodule_Safety_3ByteIn2ByteOut_InfoText" Value="Safety Inout 3Bytes/2Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_4ByteIn2ByteOut_Name" Value="Safety Inout 4Bytes/2Bytes"/>
+          <Text TextId="Submodule_Safety_4ByteIn2ByteOut_InfoText" Value="Safety Inout 4Bytes/2Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_5ByteIn2ByteOut_Name" Value="Safety Inout 5Bytes/2Bytes"/>
+          <Text TextId="Submodule_Safety_5ByteIn2ByteOut_InfoText" Value="Safety Inout 5Bytes/2Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_6ByteIn2ByteOut_Name" Value="Safety Inout 6Bytes/2Bytes"/>
+          <Text TextId="Submodule_Safety_6ByteIn2ByteOut_InfoText" Value="Safety Inout 6Bytes/2Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_7ByteIn2ByteOut_Name" Value="Safety Inout 7Bytes/2Bytes"/>
+          <Text TextId="Submodule_Safety_7ByteIn2ByteOut_InfoText" Value="Safety Inout 7Bytes/2Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_8ByteIn2ByteOut_Name" Value="Safety Inout 8Bytes/2Bytes"/>
+          <Text TextId="Submodule_Safety_8ByteIn2ByteOut_InfoText" Value="Safety Inout 8Bytes/2Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_0ByteIn3ByteOut_Name" Value="Safety Inout 0Bytes/3Bytes"/>
+          <Text TextId="Submodule_Safety_0ByteIn3ByteOut_InfoText" Value="Safety Inout 0Bytes/3Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_1ByteIn3ByteOut_Name" Value="Safety Inout 1Bytes/3Bytes"/>
+          <Text TextId="Submodule_Safety_1ByteIn3ByteOut_InfoText" Value="Safety Inout 1Bytes/3Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_2ByteIn3ByteOut_Name" Value="Safety Inout 2Bytes/3Bytes"/>
+          <Text TextId="Submodule_Safety_2ByteIn3ByteOut_InfoText" Value="Safety Inout 2Bytes/3Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_3ByteIn3ByteOut_Name" Value="Safety Inout 3Bytes/3Bytes"/>
+          <Text TextId="Submodule_Safety_3ByteIn3ByteOut_InfoText" Value="Safety Inout 3Bytes/3Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_4ByteIn3ByteOut_Name" Value="Safety Inout 4Bytes/3Bytes"/>
+          <Text TextId="Submodule_Safety_4ByteIn3ByteOut_InfoText" Value="Safety Inout 4Bytes/3Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_5ByteIn3ByteOut_Name" Value="Safety Inout 5Bytes/3Bytes"/>
+          <Text TextId="Submodule_Safety_5ByteIn3ByteOut_InfoText" Value="Safety Inout 5Bytes/3Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_6ByteIn3ByteOut_Name" Value="Safety Inout 6Bytes/3Bytes"/>
+          <Text TextId="Submodule_Safety_6ByteIn3ByteOut_InfoText" Value="Safety Inout 6Bytes/3Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_7ByteIn3ByteOut_Name" Value="Safety Inout 7Bytes/3Bytes"/>
+          <Text TextId="Submodule_Safety_7ByteIn3ByteOut_InfoText" Value="Safety Inout 7Bytes/3Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_8ByteIn3ByteOut_Name" Value="Safety Inout 8Bytes/3Bytes"/>
+          <Text TextId="Submodule_Safety_8ByteIn3ByteOut_InfoText" Value="Safety Inout 8Bytes/3Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_0ByteIn4ByteOut_Name" Value="Safety Inout 0Bytes/4Bytes"/>
+          <Text TextId="Submodule_Safety_0ByteIn4ByteOut_InfoText" Value="Safety Inout 0Bytes/4Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_1ByteIn4ByteOut_Name" Value="Safety Inout 1Bytes/4Bytes"/>
+          <Text TextId="Submodule_Safety_1ByteIn4ByteOut_InfoText" Value="Safety Inout 1Bytes/4Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_2ByteIn4ByteOut_Name" Value="Safety Inout 2Bytes/4Bytes"/>
+          <Text TextId="Submodule_Safety_2ByteIn4ByteOut_InfoText" Value="Safety Inout 2Bytes/4Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_3ByteIn4ByteOut_Name" Value="Safety Inout 3Bytes/4Bytes"/>
+          <Text TextId="Submodule_Safety_3ByteIn4ByteOut_InfoText" Value="Safety Inout 3Bytes/4Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_4ByteIn4ByteOut_Name" Value="Safety Inout 4Bytes/4Bytes"/>
+          <Text TextId="Submodule_Safety_4ByteIn4ByteOut_InfoText" Value="Safety Inout 4Bytes/4Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_5ByteIn4ByteOut_Name" Value="Safety Inout 5Bytes/4Bytes"/>
+          <Text TextId="Submodule_Safety_5ByteIn4ByteOut_InfoText" Value="Safety Inout 5Bytes/4Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_6ByteIn4ByteOut_Name" Value="Safety Inout 6Bytes/4Bytes"/>
+          <Text TextId="Submodule_Safety_6ByteIn4ByteOut_InfoText" Value="Safety Inout 6Bytes/4Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_7ByteIn4ByteOut_Name" Value="Safety Inout 7Bytes/4Bytes"/>
+          <Text TextId="Submodule_Safety_7ByteIn4ByteOut_InfoText" Value="Safety Inout 7Bytes/4Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_8ByteIn4ByteOut_Name" Value="Safety Inout 8Bytes/4Bytes"/>
+          <Text TextId="Submodule_Safety_8ByteIn4ByteOut_InfoText" Value="Safety Inout 8Bytes/4Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_0ByteIn5ByteOut_Name" Value="Safety Inout 0Bytes/5Bytes"/>
+          <Text TextId="Submodule_Safety_0ByteIn5ByteOut_InfoText" Value="Safety Inout 0Bytes/5Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_1ByteIn5ByteOut_Name" Value="Safety Inout 1Bytes/5Bytes"/>
+          <Text TextId="Submodule_Safety_1ByteIn5ByteOut_InfoText" Value="Safety Inout 1Bytes/5Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_2ByteIn5ByteOut_Name" Value="Safety Inout 2Bytes/5Bytes"/>
+          <Text TextId="Submodule_Safety_2ByteIn5ByteOut_InfoText" Value="Safety Inout 2Bytes/5Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_3ByteIn5ByteOut_Name" Value="Safety Inout 3Bytes/5Bytes"/>
+          <Text TextId="Submodule_Safety_3ByteIn5ByteOut_InfoText" Value="Safety Inout 3Bytes/5Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_4ByteIn5ByteOut_Name" Value="Safety Inout 4Bytes/5Bytes"/>
+          <Text TextId="Submodule_Safety_4ByteIn5ByteOut_InfoText" Value="Safety Inout 4Bytes/5Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_5ByteIn5ByteOut_Name" Value="Safety Inout 5Bytes/5Bytes"/>
+          <Text TextId="Submodule_Safety_5ByteIn5ByteOut_InfoText" Value="Safety Inout 5Bytes/5Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_6ByteIn5ByteOut_Name" Value="Safety Inout 6Bytes/5Bytes"/>
+          <Text TextId="Submodule_Safety_6ByteIn5ByteOut_InfoText" Value="Safety Inout 6Bytes/5Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_7ByteIn5ByteOut_Name" Value="Safety Inout 7Bytes/5Bytes"/>
+          <Text TextId="Submodule_Safety_7ByteIn5ByteOut_InfoText" Value="Safety Inout 7Bytes/5Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_8ByteIn5ByteOut_Name" Value="Safety Inout 8Bytes/5Bytes"/>
+          <Text TextId="Submodule_Safety_8ByteIn5ByteOut_InfoText" Value="Safety Inout 8Bytes/5Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_0ByteIn6ByteOut_Name" Value="Safety Inout 0Bytes/6Bytes"/>
+          <Text TextId="Submodule_Safety_0ByteIn6ByteOut_InfoText" Value="Safety Inout 0Bytes/6Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_1ByteIn6ByteOut_Name" Value="Safety Inout 1Bytes/6Bytes"/>
+          <Text TextId="Submodule_Safety_1ByteIn6ByteOut_InfoText" Value="Safety Inout 1Bytes/6Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_2ByteIn6ByteOut_Name" Value="Safety Inout 2Bytes/6Bytes"/>
+          <Text TextId="Submodule_Safety_2ByteIn6ByteOut_InfoText" Value="Safety Inout 2Bytes/6Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_3ByteIn6ByteOut_Name" Value="Safety Inout 3Bytes/6Bytes"/>
+          <Text TextId="Submodule_Safety_3ByteIn6ByteOut_InfoText" Value="Safety Inout 3Bytes/6Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_4ByteIn6ByteOut_Name" Value="Safety Inout 4Bytes/6Bytes"/>
+          <Text TextId="Submodule_Safety_4ByteIn6ByteOut_InfoText" Value="Safety Inout 4Bytes/6Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_5ByteIn6ByteOut_Name" Value="Safety Inout 5Bytes/6Bytes"/>
+          <Text TextId="Submodule_Safety_5ByteIn6ByteOut_InfoText" Value="Safety Inout 5Bytes/6Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_6ByteIn6ByteOut_Name" Value="Safety Inout 6Bytes/6Bytes"/>
+          <Text TextId="Submodule_Safety_6ByteIn6ByteOut_InfoText" Value="Safety Inout 6Bytes/6Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_7ByteIn6ByteOut_Name" Value="Safety Inout 7Bytes/6Bytes"/>
+          <Text TextId="Submodule_Safety_7ByteIn6ByteOut_InfoText" Value="Safety Inout 7Bytes/6Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_8ByteIn6ByteOut_Name" Value="Safety Inout 8Bytes/6Bytes"/>
+          <Text TextId="Submodule_Safety_8ByteIn6ByteOut_InfoText" Value="Safety Inout 8Bytes/6Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_0ByteIn7ByteOut_Name" Value="Safety Inout 0Bytes/7Bytes"/>
+          <Text TextId="Submodule_Safety_0ByteIn7ByteOut_InfoText" Value="Safety Inout 0Bytes/7Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_1ByteIn7ByteOut_Name" Value="Safety Inout 1Bytes/7Bytes"/>
+          <Text TextId="Submodule_Safety_1ByteIn7ByteOut_InfoText" Value="Safety Inout 1Bytes/7Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_2ByteIn7ByteOut_Name" Value="Safety Inout 2Bytes/7Bytes"/>
+          <Text TextId="Submodule_Safety_2ByteIn7ByteOut_InfoText" Value="Safety Inout 2Bytes/7Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_3ByteIn7ByteOut_Name" Value="Safety Inout 3Bytes/7Bytes"/>
+          <Text TextId="Submodule_Safety_3ByteIn7ByteOut_InfoText" Value="Safety Inout 3Bytes/7Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_4ByteIn7ByteOut_Name" Value="Safety Inout 4Bytes/7Bytes"/>
+          <Text TextId="Submodule_Safety_4ByteIn7ByteOut_InfoText" Value="Safety Inout 4Bytes/7Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_5ByteIn7ByteOut_Name" Value="Safety Inout 5Bytes/7Bytes"/>
+          <Text TextId="Submodule_Safety_5ByteIn7ByteOut_InfoText" Value="Safety Inout 5Bytes/7Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_6ByteIn7ByteOut_Name" Value="Safety Inout 6Bytes/7Bytes"/>
+          <Text TextId="Submodule_Safety_6ByteIn7ByteOut_InfoText" Value="Safety Inout 6Bytes/7Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_7ByteIn7ByteOut_Name" Value="Safety Inout 7Bytes/7Bytes"/>
+          <Text TextId="Submodule_Safety_7ByteIn7ByteOut_InfoText" Value="Safety Inout 7Bytes/7Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_8ByteIn7ByteOut_Name" Value="Safety Inout 8Bytes/7Bytes"/>
+          <Text TextId="Submodule_Safety_8ByteIn7ByteOut_InfoText" Value="Safety Inout 8Bytes/7Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_0ByteIn8ByteOut_Name" Value="Safety Inout 0Bytes/8Bytes"/>
+          <Text TextId="Submodule_Safety_0ByteIn8ByteOut_InfoText" Value="Safety Inout 0Bytes/8Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_1ByteIn8ByteOut_Name" Value="Safety Inout 1Bytes/8Bytes"/>
+          <Text TextId="Submodule_Safety_1ByteIn8ByteOut_InfoText" Value="Safety Inout 1Bytes/8Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_2ByteIn8ByteOut_Name" Value="Safety Inout 2Bytes/8Bytes"/>
+          <Text TextId="Submodule_Safety_2ByteIn8ByteOut_InfoText" Value="Safety Inout 2Bytes/8Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_3ByteIn8ByteOut_Name" Value="Safety Inout 3Bytes/8Bytes"/>
+          <Text TextId="Submodule_Safety_3ByteIn8ByteOut_InfoText" Value="Safety Inout 3Bytes/8Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_4ByteIn8ByteOut_Name" Value="Safety Inout 4Bytes/8Bytes"/>
+          <Text TextId="Submodule_Safety_4ByteIn8ByteOut_InfoText" Value="Safety Inout 4Bytes/8Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_5ByteIn8ByteOut_Name" Value="Safety Inout 5Bytes/8Bytes"/>
+          <Text TextId="Submodule_Safety_5ByteIn8ByteOut_InfoText" Value="Safety Inout 5Bytes/8Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_6ByteIn8ByteOut_Name" Value="Safety Inout 6Bytes/8Bytes"/>
+          <Text TextId="Submodule_Safety_6ByteIn8ByteOut_InfoText" Value="Safety Inout 6Bytes/8Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_7ByteIn8ByteOut_Name" Value="Safety Inout 7Bytes/8Bytes"/>
+          <Text TextId="Submodule_Safety_7ByteIn8ByteOut_InfoText" Value="Safety Inout 7Bytes/8Bytes Submodule"/>
+          <Text TextId="Submodule_Safety_8ByteIn8ByteOut_Name" Value="Safety Inout 8Bytes/8Bytes"/>
+          <Text TextId="Submodule_Safety_8ByteIn8ByteOut_InfoText" Value="Safety Inout 8Bytes/8Bytes Submodule"/>
+          <Text TextId="Safety Inout Module_CategoryName" Value="Safety Input/Output Modules" />
+          <Text TextId="Safety" Value="Safety" />
+          <Text TextId="Inputs01" Value="Inputs" />
+          <Text TextId="Inputs02" Value="Inputs" />
+          <Text TextId="Inputs03" Value="Inputs" />
+          <Text TextId="Inputs04" Value="Inputs" />
+          <Text TextId="Inputs05" Value="Inputs" />
+          <Text TextId="Inputs06" Value="Inputs" />
+          <Text TextId="Inputs07" Value="Inputs" />
+          <Text TextId="Inputs08" Value="Inputs" />
+          <Text TextId="Outputs01" Value="Outputs" />
+          <Text TextId="Outputs02" Value="Outputs" />
+          <Text TextId="Outputs03" Value="Outputs" />
+          <Text TextId="Outputs04" Value="Outputs" />
+          <Text TextId="Outputs05" Value="Outputs" />
+          <Text TextId="Outputs06" Value="Outputs" />
+          <Text TextId="Outputs07" Value="Outputs" />
+          <Text TextId="Outputs08" Value="Outputs" />
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>
